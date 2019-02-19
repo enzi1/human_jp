@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69be8c9b3111480eb7f751ab42750389" Name="Diagram1">
+        <EntityTypeShape EntityType="humanModel.Candidate" Width="1.5" PointX="10.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.Company" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.Contact_us" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.Employment" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.Listnew" Width="1.5" PointX="7.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.Modnew" Width="1.5" PointX="5.25" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.News" Width="1.5" PointX="12.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.Recruit" Width="1.5" PointX="7.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.Salary_char" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.Self_language" Width="1.5" PointX="8" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.Skill" Width="1.5" PointX="8" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.User_level" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.User" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="humanModel.Web_language" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="humanModel.FK__Candidate__salar__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Candidate__self___5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Candidate__skill__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Candidate__user___571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Company__user_id__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Recruit__company__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Recruit__employm__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Listnews__modnew__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Listnews__user_i__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__News__listnews_i__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Modnews__user_id__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__News__user_id__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Recruit__salary___6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Recruit__user_id__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="humanModel.FK__Users__level_id__4BAC3F29" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

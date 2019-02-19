@@ -17,5 +17,13 @@ namespace human
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Session_Start()
+        {
+            Session["userid"] = null;
+            Session["email"] = null;
+            Session["fullname"] = null;
+            Session["avatar"] = null;
+        }
     }
 }

@@ -1,31 +1,52 @@
 ﻿@{
+    Layout = "~/Views/Layout/ClientLayout.cshtml";
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<section class="features3 cid-rdMjIPJePP" id="features3-9">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="card p-3 col-12 col-md-6">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="~/Content/ClientTemplate/assets/images/01.jpg" alt="Candidate">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">
+                            CANDIDATES
+                        </h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Company can choose the best candidates for the job, and we will help you connect with that candidates .
+                        </p>
+                    </div>
+                    <div class="mbr-section-btn text-center">
+                        <a href="@Url.Action("Index","Candidate")" class="btn btn-primary display-4">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            <div class="card p-3 col-12 col-md-6">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="~/Content/ClientTemplate/assets/images/02.jpg" alt="Company">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">
+                            COMPANY
+                        </h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Candidate can choose the best company for the self, and we will help you connect with that company.
+                        </p>
+                    </div>
+                    <div class="mbr-section-btn text-center">
+                        <a href="@Url.Action("Index","Company")" class="btn btn-primary display-4">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</section>

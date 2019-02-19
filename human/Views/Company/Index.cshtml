@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/ClientLayout.cshtml";
+}
+
+<section class="mbr-section form3 cid-regsRHXb45" id="form3-19">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+
+            </div>
+        </div>
+
+        <div class="row py-2 justify-content-center">
+            <div class="" data-form-type="formoid">
+                <div data-form-alert="" hidden="">
+                    Thanks for filling out the form!
+                </div>
+                <form class="mbr-form" action="#" method="post" data-form-title="Company Form">
+                    <input type="hidden" name="keyword" value="">
+                    <div class="mbr-subscribe input-group">
+                        @Html.TextBox("txtSearch", "", htmlAttributes: new { @placeholder = "Input keyword ..." })
+                        @Html.DropDownList("Job")
+                        @Html.DropDownList("Location")
+                        <span class="input-group-btn"><button href="" type="submit" class="btn btn-primary display-4">Search</button></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials4 cid-rdMrZK7GcJ" id="testimonials4-j">
+    <div class="container">
+        <h2 class="pb-3 mbr-fonts-style mbr-white align-center display-2">
+            You can see all companys at here
+        </h2>
+
+        <div class="col-md-10 testimonials-container">
+
+
+
+            <div class="testimonials-item">
+                <div class="user row">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="user_image">
+                            <img src="~/Content/ClientTemplate/assets/images/mbr-300x200.jpg" alt="" title="">
+                        </div>
+                    </div>
+                    <div class="testimonials-caption col-lg-9 col-md-8">
+                        <div class="user_text ">
+                            <p class="mbr-fonts-style  display-7">
+                                <em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nostrum, quos voluptas fugiat blanditiis, temporibus expedita cumque doloribus ea, officiis consequuntur repellat minus ad veritatis? Facere similique accusamus, accusantium sunt!"</em>
+                            </p>
+                        </div>
+                        <div class="user_name mbr-bold mbr-fonts-style align-left pt-3 display-7">
+                            250.000 JPY
+                        </div>
+                        <div class="user_desk mbr-light mbr-fonts-style align-left pt-2 display-7">
+                            Read more
+                        </div>
+                    </div>
+                </div>
+            </div><div class="testimonials-item">
+                <div class="user row">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="user_image">
+                            <img src="~/Content/ClientTemplate/assets/images/mbr-1-300x200.jpg" alt="" title="">
+                        </div>
+                    </div>
+                    <div class="testimonials-caption col-lg-9 col-md-8">
+                        <div class="user_text">
+                            <p class="mbr-fonts-style  display-7">
+                                <em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nostrum, quos voluptas fugiat blanditiis, temporibus expedita cumque doloribus ea, officiis consequuntur repellat minus ad veritatis? Facere similique accusamus, accusantium sunt!"</em>
+                            </p>
+                        </div>
+                        <div class="user_name mbr-bold mbr-fonts-style align-left pt-3 display-7">
+                            300.000 JPY
+                        </div>
+                        <div class="user_desk mbr-light mbr-fonts-style align-left pt-2 display-7">
+                            Read more
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

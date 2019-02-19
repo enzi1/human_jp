@@ -1,0 +1,175 @@
+﻿@model human.Models.Candidate
+@{
+    ViewBag.Title = "ListCandidate";
+    Layout = "~/Views/Layout/ClientLayout.cshtml";
+}
+
+<section class="mbr-section form3 cid-regsRHXb45" id="form3-19">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+
+            </div>
+        </div>
+
+        <div class="row py-2 justify-content-center">
+            <div class="" data-form-type="formoid">
+                <div data-form-alert="" hidden="">
+                    Thanks for filling out the form!
+                </div>
+                <form class="mbr-form" action="#" method="post" data-form-title="Candidate Form">
+                    <input type="hidden" name="keyword" value="">
+                    <div class="mbr-subscribe input-group">
+                        @Html.TextBox("txtSearch", "", htmlAttributes: new { @placeholder = "Input keyword ..." })
+                        @Html.DropDownList("Job")
+                        @Html.DropDownList("Location")
+                        <span class="input-group-btn"><button href="" type="submit" class="btn btn-primary display-4">Search</button></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials1 cid-rdM6fChLEi" id="testimonials1-4">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 align-center">
+                <h2 class="pb-3 mbr-fonts-style display-2">
+                    You can see all candidates at here
+                </h2>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-3 mt-2">
+        <div class="media-container-row">
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="~/Content/ClientTemplate/assets/images/face1.jpg">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aspernatur, voluptatibus, atque, tempore molestiae.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                            John Smith
+                        </div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Developer
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="~/Content/ClientTemplate/assets/images/face2.jpg">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aspernatur, voluptatibus, atque, tempore molestiae.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                            John Smith
+                        </div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Developer
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="~/Content/ClientTemplate/assets/images/face3.jpg">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aspernatur, voluptatibus, atque, tempore molestiae.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                            John Smith
+                        </div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Developer
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="~/Content/ClientTemplate/assets/images/face4.jpg" alt="" title="">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aspernatur, voluptatibus, atque, tempore molestiae.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                            John Smith
+                        </div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Developer
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="~/Content/ClientTemplate/assets/images/face5.jpg" alt="" title="">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aspernatur, voluptatibus, atque, tempore molestiae.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                            John Smith
+                        </div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Developer
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="~/Content/ClientTemplate/assets/images/face6.jpg" alt="" title="">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aspernatur, voluptatibus, atque, tempore molestiae.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                            John Smith
+                        </div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Developer
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

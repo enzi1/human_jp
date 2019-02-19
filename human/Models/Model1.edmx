@@ -1,0 +1,1219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="humanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Candidate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="255" />
+          <Property Name="password" Type="varchar" MaxLength="255" />
+          <Property Name="birthday" Type="date" />
+          <Property Name="address" Type="ntext" />
+          <Property Name="phone" Type="varchar" MaxLength="15" />
+          <Property Name="img" Type="ntext" />
+          <Property Name="cv_title" Type="ntext" />
+          <Property Name="company_name" Type="ntext" />
+          <Property Name="work_time_from" Type="date" />
+          <Property Name="work_time_to" Type="date" />
+          <Property Name="experience_year" Type="int" />
+          <Property Name="current_position" Type="ntext" />
+          <Property Name="desire_position" Type="ntext" />
+          <Property Name="desire_job" Type="ntext" />
+          <Property Name="desire_salary" Type="ntext" />
+          <Property Name="salary_char_id" Type="int" />
+          <Property Name="desire_work_location" Type="ntext" />
+          <Property Name="career_goal" Type="ntext" />
+          <Property Name="education_school_name" Type="ntext" />
+          <Property Name="education_time_from" Type="date" />
+          <Property Name="education_time_to" Type="date" />
+          <Property Name="speciality" Type="nvarchar" MaxLength="255" />
+          <Property Name="graduate_level" Type="nvarchar" MaxLength="255" />
+          <Property Name="self_language_id" Type="int" />
+          <Property Name="language_other" Type="nvarchar" MaxLength="255" />
+          <Property Name="skill_id" Type="int" />
+          <Property Name="skill_other" Type="ntext" />
+          <Property Name="hobby" Type="ntext" />
+          <Property Name="facebook" Type="ntext" />
+          <Property Name="idloginsocial" Type="ntext" />
+          <Property Name="status_active" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="password" Type="varchar" MaxLength="255" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="address" Type="ntext" />
+          <Property Name="phone" Type="varchar" MaxLength="15" />
+          <Property Name="fax" Type="nvarchar" MaxLength="255" />
+          <Property Name="img" Type="ntext" />
+          <Property Name="establish" Type="varchar" MaxLength="5" />
+          <Property Name="founder" Type="nvarchar" MaxLength="255" />
+          <Property Name="member_quantity" Type="int" />
+          <Property Name="introduce" Type="ntext" />
+          <Property Name="website" Type="nvarchar" MaxLength="255" />
+          <Property Name="status_active" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Contact_us">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="address" Type="ntext" />
+          <Property Name="phone" Type="varchar" MaxLength="15" />
+          <Property Name="subject" Type="ntext" />
+          <Property Name="content" Type="ntext" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Employment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Listnews">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="modnews_id" Type="int" />
+          <Property Name="name" Type="ntext" />
+          <Property Name="img" Type="ntext" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="slug" Type="text" />
+          <Property Name="user_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Modnews">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mod_name" Type="ntext" />
+          <Property Name="mod_img" Type="ntext" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="slug" Type="text" />
+          <Property Name="user_id" Type="int" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="listnews_id" Type="int" />
+          <Property Name="name" Type="ntext" />
+          <Property Name="intro" Type="ntext" />
+          <Property Name="content" Type="ntext" />
+          <Property Name="img" Type="ntext" />
+          <Property Name="status_active" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Recruit">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company_id" Type="int" />
+          <Property Name="title" Type="ntext" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="sex" Type="int" />
+          <Property Name="job_description" Type="ntext" />
+          <Property Name="work_location" Type="ntext" />
+          <Property Name="work_time" Type="ntext" />
+          <Property Name="holiday" Type="ntext" />
+          <Property Name="condition" Type="ntext" />
+          <Property Name="employment_id" Type="int" />
+          <Property Name="education_level" Type="nvarchar" MaxLength="255" />
+          <Property Name="salary" Type="nvarchar" MaxLength="255" />
+          <Property Name="salary_char_id" Type="int" />
+          <Property Name="training_time" Type="nvarchar" MaxLength="255" />
+          <Property Name="welfare" Type="ntext" />
+          <Property Name="applicable_nationality" Type="nvarchar" MaxLength="255" />
+          <Property Name="selection_process" Type="ntext" />
+          <Property Name="status_active" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Salary_char">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="chars" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Self_language">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="level" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="User_level">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="255" />
+          <Property Name="password" Type="varchar" MaxLength="255" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="255" />
+          <Property Name="address" Type="ntext" />
+          <Property Name="phone" Type="varchar" MaxLength="15" />
+          <Property Name="hometown" Type="ntext" />
+          <Property Name="avatar" Type="ntext" />
+          <Property Name="note" Type="ntext" />
+          <Property Name="birthday" Type="date" />
+          <Property Name="level_id" Type="int" />
+          <Property Name="remember_token" Type="ntext" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Web_language">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="img" Type="ntext" />
+          <Property Name="chars" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <Association Name="FK__Candidate__salar__5441852A">
+          <End Role="Salary_char" Type="Self.Salary_char" Multiplicity="0..1" />
+          <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary_char">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Candidate">
+              <PropertyRef Name="salary_char_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Candidate__self___5535A963">
+          <End Role="Self_language" Type="Self.Self_language" Multiplicity="0..1" />
+          <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Self_language">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Candidate">
+              <PropertyRef Name="self_language_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Candidate__skill__5629CD9C">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="0..1" />
+          <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Candidate">
+              <PropertyRef Name="skill_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Candidate__user___571DF1D5">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Candidate">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Company__user_id__5DCAEF64">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Listnews__modnew__6B24EA82">
+          <End Role="Modnews" Type="Self.Modnews" Multiplicity="0..1" />
+          <End Role="Listnews" Type="Self.Listnews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modnews">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Listnews">
+              <PropertyRef Name="modnews_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Listnews__user_i__6C190EBB">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Listnews" Type="Self.Listnews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Listnews">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Modnews__user_id__68487DD7">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Modnews" Type="Self.Modnews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Modnews">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__listnews_i__6EF57B66">
+          <End Role="Listnews" Type="Self.Listnews" Multiplicity="0..1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Listnews">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="listnews_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__user_id__6FE99F9F">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recruit__company__628FA481">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Recruit" Type="Self.Recruit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Recruit">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recruit__employm__6383C8BA">
+          <End Role="Employment" Type="Self.Employment" Multiplicity="0..1" />
+          <End Role="Recruit" Type="Self.Recruit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employment">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Recruit">
+              <PropertyRef Name="employment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recruit__salary___6477ECF3">
+          <End Role="Salary_char" Type="Self.Salary_char" Multiplicity="0..1" />
+          <End Role="Recruit" Type="Self.Recruit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary_char">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Recruit">
+              <PropertyRef Name="salary_char_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recruit__user_id__656C112C">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Recruit" Type="Self.Recruit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Recruit">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__level_id__4BAC3F29">
+          <End Role="User_level" Type="Self.User_level" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_level">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="humanModelStoreContainer">
+          <EntitySet Name="Candidate" EntityType="Self.Candidate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact_us" EntityType="Self.Contact_us" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employment" EntityType="Self.Employment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Listnews" EntityType="Self.Listnews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Modnews" EntityType="Self.Modnews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recruit" EntityType="Self.Recruit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salary_char" EntityType="Self.Salary_char" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Self_language" EntityType="Self.Self_language" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_level" EntityType="Self.User_level" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Web_language" EntityType="Self.Web_language" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Candidate__salar__5441852A" Association="Self.FK__Candidate__salar__5441852A">
+            <End Role="Salary_char" EntitySet="Salary_char" />
+            <End Role="Candidate" EntitySet="Candidate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Candidate__self___5535A963" Association="Self.FK__Candidate__self___5535A963">
+            <End Role="Self_language" EntitySet="Self_language" />
+            <End Role="Candidate" EntitySet="Candidate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Candidate__skill__5629CD9C" Association="Self.FK__Candidate__skill__5629CD9C">
+            <End Role="Skill" EntitySet="Skill" />
+            <End Role="Candidate" EntitySet="Candidate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Candidate__user___571DF1D5" Association="Self.FK__Candidate__user___571DF1D5">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Candidate" EntitySet="Candidate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Company__user_id__5DCAEF64" Association="Self.FK__Company__user_id__5DCAEF64">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Listnews__modnew__6B24EA82" Association="Self.FK__Listnews__modnew__6B24EA82">
+            <End Role="Modnews" EntitySet="Modnews" />
+            <End Role="Listnews" EntitySet="Listnews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Listnews__user_i__6C190EBB" Association="Self.FK__Listnews__user_i__6C190EBB">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Listnews" EntitySet="Listnews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Modnews__user_id__68487DD7" Association="Self.FK__Modnews__user_id__68487DD7">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Modnews" EntitySet="Modnews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__listnews_i__6EF57B66" Association="Self.FK__News__listnews_i__6EF57B66">
+            <End Role="Listnews" EntitySet="Listnews" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__user_id__6FE99F9F" Association="Self.FK__News__user_id__6FE99F9F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recruit__company__628FA481" Association="Self.FK__Recruit__company__628FA481">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Recruit" EntitySet="Recruit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recruit__employm__6383C8BA" Association="Self.FK__Recruit__employm__6383C8BA">
+            <End Role="Employment" EntitySet="Employment" />
+            <End Role="Recruit" EntitySet="Recruit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recruit__salary___6477ECF3" Association="Self.FK__Recruit__salary___6477ECF3">
+            <End Role="Salary_char" EntitySet="Salary_char" />
+            <End Role="Recruit" EntitySet="Recruit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recruit__user_id__656C112C" Association="Self.FK__Recruit__user_id__656C112C">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Recruit" EntitySet="Recruit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__level_id__4BAC3F29" Association="Self.FK__Users__level_id__4BAC3F29">
+            <End Role="User_level" EntitySet="User_level" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="humanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Candidate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fullname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cv_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="company_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="work_time_from" Type="DateTime" Precision="0" />
+          <Property Name="work_time_to" Type="DateTime" Precision="0" />
+          <Property Name="experience_year" Type="Int32" />
+          <Property Name="current_position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="desire_position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="desire_job" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="desire_salary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="salary_char_id" Type="Int32" />
+          <Property Name="desire_work_location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="career_goal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="education_school_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="education_time_from" Type="DateTime" Precision="0" />
+          <Property Name="education_time_to" Type="DateTime" Precision="0" />
+          <Property Name="speciality" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="graduate_level" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="self_language_id" Type="Int32" />
+          <Property Name="language_other" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="skill_id" Type="Int32" />
+          <Property Name="skill_other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hobby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="facebook" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="idloginsocial" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="status_active" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Salary_char" Relationship="Self.FK__Candidate__salar__5441852A" FromRole="Candidate" ToRole="Salary_char" />
+          <NavigationProperty Name="Self_language" Relationship="Self.FK__Candidate__self___5535A963" FromRole="Candidate" ToRole="Self_language" />
+          <NavigationProperty Name="Skill" Relationship="Self.FK__Candidate__skill__5629CD9C" FromRole="Candidate" ToRole="Skill" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Candidate__user___571DF1D5" FromRole="Candidate" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="fax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="establish" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="founder" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="member_quantity" Type="Int32" />
+          <Property Name="introduce" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="website" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="status_active" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Company__user_id__5DCAEF64" FromRole="Company" ToRole="Users" />
+          <NavigationProperty Name="Recruits" Relationship="Self.FK__Recruit__company__628FA481" FromRole="Company" ToRole="Recruit" />
+        </EntityType>
+        <EntityType Name="Contact_us">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Employment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Recruits" Relationship="Self.FK__Recruit__employm__6383C8BA" FromRole="Employment" ToRole="Recruit" />
+        </EntityType>
+        <EntityType Name="Listnew">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modnews_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="user_id" Type="Int32" />
+          <NavigationProperty Name="Modnew" Relationship="Self.FK__Listnews__modnew__6B24EA82" FromRole="Listnews" ToRole="Modnews" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Listnews__user_i__6C190EBB" FromRole="Listnews" ToRole="Users" />
+          <NavigationProperty Name="News" Relationship="Self.FK__News__listnews_i__6EF57B66" FromRole="Listnews" ToRole="News" />
+        </EntityType>
+        <EntityType Name="Modnew">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mod_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mod_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="slug" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="user_id" Type="Int32" />
+          <NavigationProperty Name="Listnews" Relationship="Self.FK__Listnews__modnew__6B24EA82" FromRole="Modnews" ToRole="Listnews" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Modnews__user_id__68487DD7" FromRole="Modnews" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="listnews_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="intro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="status_active" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Listnew" Relationship="Self.FK__News__listnews_i__6EF57B66" FromRole="News" ToRole="Listnews" />
+          <NavigationProperty Name="User" Relationship="Self.FK__News__user_id__6FE99F9F" FromRole="News" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Recruit">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company_id" Type="Int32" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="sex" Type="Int32" />
+          <Property Name="job_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="work_location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="work_time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="holiday" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="condition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="employment_id" Type="Int32" />
+          <Property Name="education_level" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="salary_char_id" Type="Int32" />
+          <Property Name="training_time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="welfare" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="applicable_nationality" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="selection_process" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="status_active" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__Recruit__company__628FA481" FromRole="Recruit" ToRole="Company" />
+          <NavigationProperty Name="Employment" Relationship="Self.FK__Recruit__employm__6383C8BA" FromRole="Recruit" ToRole="Employment" />
+          <NavigationProperty Name="Salary_char" Relationship="Self.FK__Recruit__salary___6477ECF3" FromRole="Recruit" ToRole="Salary_char" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Recruit__user_id__656C112C" FromRole="Recruit" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Salary_char">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="chars" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Candidates" Relationship="Self.FK__Candidate__salar__5441852A" FromRole="Salary_char" ToRole="Candidate" />
+          <NavigationProperty Name="Recruits" Relationship="Self.FK__Recruit__salary___6477ECF3" FromRole="Salary_char" ToRole="Recruit" />
+        </EntityType>
+        <EntityType Name="Self_language">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="level" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Candidates" Relationship="Self.FK__Candidate__self___5535A963" FromRole="Self_language" ToRole="Candidate" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Candidates" Relationship="Self.FK__Candidate__skill__5629CD9C" FromRole="Skill" ToRole="Candidate" />
+        </EntityType>
+        <EntityType Name="User_level">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Users__level_id__4BAC3F29" FromRole="User_level" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fullname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="hometown" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="level_id" Type="Int32" />
+          <Property Name="remember_token" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Candidates" Relationship="Self.FK__Candidate__user___571DF1D5" FromRole="Users" ToRole="Candidate" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK__Company__user_id__5DCAEF64" FromRole="Users" ToRole="Company" />
+          <NavigationProperty Name="Listnews" Relationship="Self.FK__Listnews__user_i__6C190EBB" FromRole="Users" ToRole="Listnews" />
+          <NavigationProperty Name="Modnews" Relationship="Self.FK__Modnews__user_id__68487DD7" FromRole="Users" ToRole="Modnews" />
+          <NavigationProperty Name="News" Relationship="Self.FK__News__user_id__6FE99F9F" FromRole="Users" ToRole="News" />
+          <NavigationProperty Name="Recruits" Relationship="Self.FK__Recruit__user_id__656C112C" FromRole="Users" ToRole="Recruit" />
+          <NavigationProperty Name="User_level" Relationship="Self.FK__Users__level_id__4BAC3F29" FromRole="Users" ToRole="User_level" />
+        </EntityType>
+        <EntityType Name="Web_language">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chars" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__Candidate__salar__5441852A">
+          <End Role="Salary_char" Type="Self.Salary_char" Multiplicity="0..1" />
+          <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary_char">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Candidate">
+              <PropertyRef Name="salary_char_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Candidate__self___5535A963">
+          <End Role="Self_language" Type="Self.Self_language" Multiplicity="0..1" />
+          <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Self_language">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Candidate">
+              <PropertyRef Name="self_language_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Candidate__skill__5629CD9C">
+          <End Role="Skill" Type="Self.Skill" Multiplicity="0..1" />
+          <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skill">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Candidate">
+              <PropertyRef Name="skill_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Candidate__user___571DF1D5">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Candidate">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Company__user_id__5DCAEF64">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recruit__company__628FA481">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Recruit" Type="Self.Recruit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Recruit">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recruit__employm__6383C8BA">
+          <End Role="Employment" Type="Self.Employment" Multiplicity="0..1" />
+          <End Role="Recruit" Type="Self.Recruit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employment">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Recruit">
+              <PropertyRef Name="employment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Listnews__modnew__6B24EA82">
+          <End Role="Modnews" Type="Self.Modnew" Multiplicity="0..1" />
+          <End Role="Listnews" Type="Self.Listnew" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modnews">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Listnews">
+              <PropertyRef Name="modnews_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Listnews__user_i__6C190EBB">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Listnews" Type="Self.Listnew" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Listnews">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__listnews_i__6EF57B66">
+          <End Role="Listnews" Type="Self.Listnew" Multiplicity="0..1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Listnews">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="listnews_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Modnews__user_id__68487DD7">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Modnews" Type="Self.Modnew" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Modnews">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__News__user_id__6FE99F9F">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recruit__salary___6477ECF3">
+          <End Role="Salary_char" Type="Self.Salary_char" Multiplicity="0..1" />
+          <End Role="Recruit" Type="Self.Recruit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salary_char">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Recruit">
+              <PropertyRef Name="salary_char_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Recruit__user_id__656C112C">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Recruit" Type="Self.Recruit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Recruit">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__level_id__4BAC3F29">
+          <End Role="User_level" Type="Self.User_level" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_level">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="humanEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Candidates" EntityType="Self.Candidate" />
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="Contact_us" EntityType="Self.Contact_us" />
+          <EntitySet Name="Employments" EntityType="Self.Employment" />
+          <EntitySet Name="Listnews" EntityType="Self.Listnew" />
+          <EntitySet Name="Modnews" EntityType="Self.Modnew" />
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="Recruits" EntityType="Self.Recruit" />
+          <EntitySet Name="Salary_char" EntityType="Self.Salary_char" />
+          <EntitySet Name="Self_language" EntityType="Self.Self_language" />
+          <EntitySet Name="Skills" EntityType="Self.Skill" />
+          <EntitySet Name="User_level" EntityType="Self.User_level" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Web_language" EntityType="Self.Web_language" />
+          <AssociationSet Name="FK__Candidate__salar__5441852A" Association="Self.FK__Candidate__salar__5441852A">
+            <End Role="Salary_char" EntitySet="Salary_char" />
+            <End Role="Candidate" EntitySet="Candidates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Candidate__self___5535A963" Association="Self.FK__Candidate__self___5535A963">
+            <End Role="Self_language" EntitySet="Self_language" />
+            <End Role="Candidate" EntitySet="Candidates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Candidate__skill__5629CD9C" Association="Self.FK__Candidate__skill__5629CD9C">
+            <End Role="Skill" EntitySet="Skills" />
+            <End Role="Candidate" EntitySet="Candidates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Candidate__user___571DF1D5" Association="Self.FK__Candidate__user___571DF1D5">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Candidate" EntitySet="Candidates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Company__user_id__5DCAEF64" Association="Self.FK__Company__user_id__5DCAEF64">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Company" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recruit__company__628FA481" Association="Self.FK__Recruit__company__628FA481">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="Recruit" EntitySet="Recruits" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recruit__employm__6383C8BA" Association="Self.FK__Recruit__employm__6383C8BA">
+            <End Role="Employment" EntitySet="Employments" />
+            <End Role="Recruit" EntitySet="Recruits" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Listnews__modnew__6B24EA82" Association="Self.FK__Listnews__modnew__6B24EA82">
+            <End Role="Modnews" EntitySet="Modnews" />
+            <End Role="Listnews" EntitySet="Listnews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Listnews__user_i__6C190EBB" Association="Self.FK__Listnews__user_i__6C190EBB">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Listnews" EntitySet="Listnews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__listnews_i__6EF57B66" Association="Self.FK__News__listnews_i__6EF57B66">
+            <End Role="Listnews" EntitySet="Listnews" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Modnews__user_id__68487DD7" Association="Self.FK__Modnews__user_id__68487DD7">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Modnews" EntitySet="Modnews" />
+          </AssociationSet>
+          <AssociationSet Name="FK__News__user_id__6FE99F9F" Association="Self.FK__News__user_id__6FE99F9F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recruit__salary___6477ECF3" Association="Self.FK__Recruit__salary___6477ECF3">
+            <End Role="Salary_char" EntitySet="Salary_char" />
+            <End Role="Recruit" EntitySet="Recruits" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Recruit__user_id__656C112C" Association="Self.FK__Recruit__user_id__656C112C">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Recruit" EntitySet="Recruits" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__level_id__4BAC3F29" Association="Self.FK__Users__level_id__4BAC3F29">
+            <End Role="User_level" EntitySet="User_level" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="humanModelStoreContainer" CdmEntityContainer="humanEntities1">
+          <EntitySetMapping Name="Candidates">
+            <EntityTypeMapping TypeName="humanModel.Candidate">
+              <MappingFragment StoreEntitySet="Candidate">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="cv_title" ColumnName="cv_title" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="work_time_from" ColumnName="work_time_from" />
+                <ScalarProperty Name="work_time_to" ColumnName="work_time_to" />
+                <ScalarProperty Name="experience_year" ColumnName="experience_year" />
+                <ScalarProperty Name="current_position" ColumnName="current_position" />
+                <ScalarProperty Name="desire_position" ColumnName="desire_position" />
+                <ScalarProperty Name="desire_job" ColumnName="desire_job" />
+                <ScalarProperty Name="desire_salary" ColumnName="desire_salary" />
+                <ScalarProperty Name="salary_char_id" ColumnName="salary_char_id" />
+                <ScalarProperty Name="desire_work_location" ColumnName="desire_work_location" />
+                <ScalarProperty Name="career_goal" ColumnName="career_goal" />
+                <ScalarProperty Name="education_school_name" ColumnName="education_school_name" />
+                <ScalarProperty Name="education_time_from" ColumnName="education_time_from" />
+                <ScalarProperty Name="education_time_to" ColumnName="education_time_to" />
+                <ScalarProperty Name="speciality" ColumnName="speciality" />
+                <ScalarProperty Name="graduate_level" ColumnName="graduate_level" />
+                <ScalarProperty Name="self_language_id" ColumnName="self_language_id" />
+                <ScalarProperty Name="language_other" ColumnName="language_other" />
+                <ScalarProperty Name="skill_id" ColumnName="skill_id" />
+                <ScalarProperty Name="skill_other" ColumnName="skill_other" />
+                <ScalarProperty Name="hobby" ColumnName="hobby" />
+                <ScalarProperty Name="facebook" ColumnName="facebook" />
+                <ScalarProperty Name="idloginsocial" ColumnName="idloginsocial" />
+                <ScalarProperty Name="status_active" ColumnName="status_active" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="humanModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="establish" ColumnName="establish" />
+                <ScalarProperty Name="founder" ColumnName="founder" />
+                <ScalarProperty Name="member_quantity" ColumnName="member_quantity" />
+                <ScalarProperty Name="introduce" ColumnName="introduce" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="status_active" ColumnName="status_active" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contact_us">
+            <EntityTypeMapping TypeName="humanModel.Contact_us">
+              <MappingFragment StoreEntitySet="Contact_us">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employments">
+            <EntityTypeMapping TypeName="humanModel.Employment">
+              <MappingFragment StoreEntitySet="Employment">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Listnews">
+            <EntityTypeMapping TypeName="humanModel.Listnew">
+              <MappingFragment StoreEntitySet="Listnews">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="modnews_id" ColumnName="modnews_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modnews">
+            <EntityTypeMapping TypeName="humanModel.Modnew">
+              <MappingFragment StoreEntitySet="Modnews">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="mod_name" ColumnName="mod_name" />
+                <ScalarProperty Name="mod_img" ColumnName="mod_img" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="humanModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="listnews_id" ColumnName="listnews_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="intro" ColumnName="intro" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="status_active" ColumnName="status_active" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recruits">
+            <EntityTypeMapping TypeName="humanModel.Recruit">
+              <MappingFragment StoreEntitySet="Recruit">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="job_description" ColumnName="job_description" />
+                <ScalarProperty Name="work_location" ColumnName="work_location" />
+                <ScalarProperty Name="work_time" ColumnName="work_time" />
+                <ScalarProperty Name="holiday" ColumnName="holiday" />
+                <ScalarProperty Name="condition" ColumnName="condition" />
+                <ScalarProperty Name="employment_id" ColumnName="employment_id" />
+                <ScalarProperty Name="education_level" ColumnName="education_level" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="salary_char_id" ColumnName="salary_char_id" />
+                <ScalarProperty Name="training_time" ColumnName="training_time" />
+                <ScalarProperty Name="welfare" ColumnName="welfare" />
+                <ScalarProperty Name="applicable_nationality" ColumnName="applicable_nationality" />
+                <ScalarProperty Name="selection_process" ColumnName="selection_process" />
+                <ScalarProperty Name="status_active" ColumnName="status_active" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salary_char">
+            <EntityTypeMapping TypeName="humanModel.Salary_char">
+              <MappingFragment StoreEntitySet="Salary_char">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="chars" ColumnName="chars" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Self_language">
+            <EntityTypeMapping TypeName="humanModel.Self_language">
+              <MappingFragment StoreEntitySet="Self_language">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="level" ColumnName="level" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skills">
+            <EntityTypeMapping TypeName="humanModel.Skill">
+              <MappingFragment StoreEntitySet="Skill">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_level">
+            <EntityTypeMapping TypeName="humanModel.User_level">
+              <MappingFragment StoreEntitySet="User_level">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="humanModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="hometown" ColumnName="hometown" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="level_id" ColumnName="level_id" />
+                <ScalarProperty Name="remember_token" ColumnName="remember_token" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Web_language">
+            <EntityTypeMapping TypeName="humanModel.Web_language">
+              <MappingFragment StoreEntitySet="Web_language">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="chars" ColumnName="chars" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
